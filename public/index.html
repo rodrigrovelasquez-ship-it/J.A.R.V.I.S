@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090d16">
+    <meta name="description" content="Tu asistente personal, listo cuando dices Jarvis.">
+    <title>Jarvis — Asistente personal</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Jarvis, inicio">
+          <span class="brand-mark" aria-hidden="true">J</span>
+          <span>JARVIS<span class="brand-subtitle">ASISTENTE PERSONAL</span></span>
+        </a>
+        <div class="connection"><span class="connection-dot"></span><span id="connection-label">Conectando…</span></div>
+      </header>
+
+      <section class="hero" aria-labelledby="welcome-title">
+        <div class="orb-wrap" id="orb-wrap">
+          <div class="orb-ring orb-ring-one"></div>
+          <div class="orb-ring orb-ring-two"></div>
+          <div class="orb"><span>J</span></div>
+        </div>
+        <p class="eyebrow" id="voice-state">ASISTENTE EN ESPERA</p>
+        <h1 id="welcome-title">A tu disposición.</h1>
+        <p class="hero-copy" id="hero-copy">Di <strong>«Jarvis»</strong> y después haz tu pregunta.</p>
+        <button class="mic-button" id="mic-button" type="button">
+          <span class="mic-icon" aria-hidden="true">◉</span>
+          <span id="mic-label">Activar escucha</span>
+        </button>
+        <p class="privacy-note" id="privacy-note">El micrófono se activa solo cuando tú lo permites.</p>
+      </section>
+
+      <section class="conversation" aria-labelledby="conversation-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TU ESPACIO</p>
+            <h2 id="conversation-title">Conversación</h2>
+          </div>
+          <button id="clear-button" class="clear-button" type="button" hidden>Limpiar</button>
+        </div>
+        <div id="messages" class="messages" aria-live="polite" aria-relevant="additions text">
+          <div class="empty-state" id="empty-state">
+            <span class="empty-symbol" aria-hidden="true">✳</span>
+            <p>Tus conversaciones aparecerán aquí.</p>
+            <span>Puedes llamarme por voz o escribir tu pregunta.</span>
+          </div>
+        </div>
+        <form id="chat-form" class="composer">
+          <label class="visually-hidden" for="message-input">Escribe tu pregunta a Jarvis</label>
+          <input id="message-input" name="message" type="text" maxlength="8000" placeholder="Pregúntame lo que quieras…" autocomplete="off" required>
+          <button class="send-button" id="send-button" type="submit" aria-label="Enviar pregunta">
+            <span aria-hidden="true">↑</span>
+          </button>
+        </form>
+        <p class="disclaimer">Jarvis puede equivocarse. Verifica la información importante.</p>
+      </section>
+      <footer>Una voz tranquila, siempre que la llames.</footer>
+    </main>
+    <script type="application/json" id="app-config">{"wakeWord":"jarvis"}</script>
+  </body>
+</html>
